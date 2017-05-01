@@ -7,17 +7,30 @@
 </head>
 <body>
 	<div class="container" ng-controller="AppCtrl">
+		<div class="row">
+			<div class="col-xs-4 col-sm-offset-4">
+				<form ng-submit="submitAddTask()">
+					<input type="text" class="form-control" ng-model="tasktoadd">
+					<hr>
+					<div class="text-center">
+						<input type="submit" class="btn btn-info" value="submit">
+					</div>
+				</form>
+			</div>
+		</div>
 		<table class="table">
 			<thead>
 				<tr>
 					<th>todo</th>
 					<th>is done</th>
+					<th>action</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr ng-repeat="item in todolist">
 					<td>{{item.title}}</td>
-					<td>{{item.isDone}}</td>
+					<td><input type="checkbox" data-ng-checked="item.isDone"></td>
+					<td></td>
 				</tr>
 			</tbody>
 		</table>
