@@ -28,9 +28,9 @@
 			</thead>
 			<tbody>
 				<tr ng-repeat="item in todolist">
-					<td>{{item.title}}</td>
+					<td data-ng-bind="item.title"></td>
 					<td><input type="checkbox" data-ng-checked="item.isDone"></td>
-					<td><div class="btn btn-danger">delete</div></td>
+					<td><div class="btn btn-danger" data-ng-click="deleteTask(item._id)">delete</div></td>
 				</tr>
 			</tbody>
 		</table>
