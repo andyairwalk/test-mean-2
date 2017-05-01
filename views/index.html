@@ -7,21 +7,17 @@
 </head>
 <body>
 	<div class="container" ng-controller="AppCtrl">
-		<h1>hi!</h1>
-		<input type="text" ng-model=test>
-		{{test}}
-
 		<table class="table">
 			<thead>
 				<tr>
-					<th>name</th>
-					<th>email</th>
+					<th>todo</th>
+					<th>is done</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="contact in contactlist">
-					<td>{{contact.title}}</td>
-					<td>{{contact.isDone}}</td>
+				<tr ng-repeat="item in todolist">
+					<td>{{item.title}}</td>
+					<td>{{item.isDone}}</td>
 				</tr>
 			</tbody>
 		</table>

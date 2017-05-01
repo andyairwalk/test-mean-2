@@ -7,8 +7,7 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http){
 		url: 'api/tasks'
 	}).then(function (response){
 		console.log('I got the data requested');
-		console.log(response);
-		$scope.contactlist = response.data;
+		$scope.todolist = response.data;
 	},function (error){
 		console.log('there was an error');
 	});
