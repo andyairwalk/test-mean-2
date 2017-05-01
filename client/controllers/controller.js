@@ -12,14 +12,17 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http){
 	});
 
 	$scope.submitAddTask = function(){
-		$http({
-			method: 'POST',
-			url: 'api/task',
-			data: {title: $scope.tasktoadd, isDone: false}
-		}).then(function (response){
-			$scope.todolist.push(response.data); //add the task
-		},function (error){
-			console.log('there was an error adding the task' + error);
-		});
+		if($scope.tasktoadd != null) {
+			$http({
+				method: 'POST',
+				url: 'api/task',
+				data: {title: $scope.tasktoadd, isDone: false}
+			}).then(function (response){
+				$scope.todolist.push(response.data); //add the task
+				$scope.tasktoadd = '';
+			},function (error){
+				console.log('there was an error adding the task' + error);
+			});
+		}
 	}
 }]);
